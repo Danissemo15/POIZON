@@ -1,0 +1,66 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: black; /* Черный фон */
+    color: white; /* Белый текст */
+}
+
+header {
+    background-color: #333; /* Темно-серый фон для заголовка */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    background-color: #444; /* Умеренно темный фон для основного текста */
+}
+
+h1, h2, h3 {
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px; /* Увеличиваем расстояние между товарами и общей суммой */
+}
+
+li {
+    margin-bottom: 10px; /* Увеличиваем пространство между товарами */
+}
+
+button {
+    background-color: #555; /* Темный фон для кнопок */
+    color: white;
+    border: none;
+    padding: 10px 20px; /* Увеличиваем размер кнопок */
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #666; /* Светло-серый при наведении */
+}
+
+footer {
+    background-color: #333; /* Темно-серый фон для подвала */
+    color: white;
+    text-align: center;
+    padding: 10px;
+}

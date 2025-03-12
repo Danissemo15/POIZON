@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Маркетплейс</title>
+</head>
+<body>
+    <div class="glav">
+        <h1>POIZON</h1>
+        <button onclick="location.href='/cart'">Корзина</button>
+        <button>Поддержка</button>
+    </div>
+
+    <div id="products">
+        {% for product in products %}
+        <div class="product">
+            <img src="{{ product.image }}" alt="{{ product.name }}">
+            <h2>{{ product.name }}</h2>
+            <p>{{ product.price }}</p>
+            <button onclick="addToCart({{ product.id }})">Добавить в корзину</button>
+        </div>
+        {% endfor %}
+    </div>
+
+    <script>
+        async function addToCart(id) {
+            try {
+                const response = await fetch('/add_to_cart', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ id })
+                });
+                const data = await response.json();
+                alert(data.message);
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+    </script>
+</body>
+</html>

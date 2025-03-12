@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина товаров</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Корзина товаров</h1>
+        <nav>
+            <a href="/">Главная</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Ваши товары</h2>
+        <ul id="cart-items">
+            <li>Товар 1 - <button onclick="removeFromCart(1)">Удалить</button></li>
+            <li>Товар 2 - <button onclick="removeFromCart(2)">Удалить</button></li>
+            <li>Товар 3 - <button onclick="removeFromCart(3)">Удалить</button></li>
+        </ul>
+        <h3>Итого: <span id="total-price">0</span> руб.</h3>
+        <button id="checkout-button">Оформить заказ</button>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 POIZON</p>
+    </footer>
+
+    <script>
+        function removeFromCart(id) {
+            console.log(`Removing product with id ${id}`);
+            // Логика удаления товара
+        }
+    </script>
+</body>
+</html>
